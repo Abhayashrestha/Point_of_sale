@@ -1,0 +1,7 @@
+Id	Name	Rarity	Quantity
+1	Pikachu	Common	5
+2	Charizard	Rare	2
+3	Bulbasaur	Common	7
+4	Mewtwo	Legendary	1
+5	Squirtle	Common	4
+6	Gyarados	Rare	3
