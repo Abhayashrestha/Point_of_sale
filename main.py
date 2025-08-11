@@ -21,12 +21,18 @@ def main():
             print("-------------Abhaya's Pokemon Card corner-----------------")
             print("----------------------------------------------------------")
             operations.display_inventory()
-
-            
-
     except:
         pass
-
+    try:  
+        choice = int(input("Please Enter your choice here : "))
+        if choice == 2:
+            print("----------------------------------------------------------")
+            print("-------------Abhaya's Pokemon Card corner-----------------")
+            print("----------------------------------------------------------")
+            operations.display_inventory()
+            operations.buy_card()
+    except:
+        pass
 
 
 main()
