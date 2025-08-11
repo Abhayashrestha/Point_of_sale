@@ -1,5 +1,12 @@
+#importing necessary files
+import read
+import operations
+#creating a simple list to store card info
+cards=[]
+
 def main():
-    file_path='pokemon_cards.txt'
+    file_path='pos/pokemon_cards.txt'
+    read.load_inventory(file_path)
     print("----------------------------------------------------------")
     print("-------------Abhaya's Pokemon Card corner-----------------")
     print("----------------------------------------------------------")
@@ -9,10 +16,11 @@ def main():
         print(option)
     try:   
         choice = int(input("Please Enter your choice here : "))
-        if choice is 1:
+        if choice == 1:
             print("----------------------------------------------------------")
             print("-------------Abhaya's Pokemon Card corner-----------------")
             print("----------------------------------------------------------")
+            operations.display_inventory()
 
             
 
