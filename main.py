@@ -24,13 +24,16 @@ def main():
     except:
         pass
     try:  
-        choice = int(input("Please Enter your choice here : "))
         if choice == 2:
-            print("----------------------------------------------------------")
-            print("-------------Abhaya's Pokemon Card corner-----------------")
-            print("----------------------------------------------------------")
-            operations.display_inventory()
-            operations.buy_card()
+            while True:
+                print("----------------------------------------------------------")
+                print("-------------Abhaya's Pokemon Card corner-----------------")
+                print("----------------------------------------------------------")
+                operations.display_inventory()
+                name=input("Please enter your name: ")
+                operations.buy_card()
+                buy_quantity=int(input("Please enter the quantity of card you would like to purchase"))
+                
     except:
         pass
 
