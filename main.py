@@ -14,8 +14,8 @@ def main():
     options=["Press 1 to view inverntory", "Press 2 to buy card", "Press 3 to sell cards","Press 4 to exit"]
     for option in options:
         print(option)
+    choice = int(input("Please Enter your choice here : "))
     try:   
-        choice = int(input("Please Enter your choice here : "))
         if choice == 1:
             print("----------------------------------------------------------")
             print("-------------Abhaya's Pokemon Card corner-----------------")
@@ -32,8 +32,7 @@ def main():
                 operations.display_inventory()
                 name=input("Please enter your name: ")
                 buy_id=int(input("Please enter the ID of the card you would like to purchase: "))
-                buy_quantity=int(input("Please enter the quantity of card you would like to purchase: "))
-                
+                operations.buy_card(name,buy_id)
     except:
         pass
 

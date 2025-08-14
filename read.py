@@ -11,7 +11,7 @@ def load_inventory(file_path):
                     card={'Id':int(data[0]),
                           'Name':data[1], 
                             'Rarity':data[2],
-                            'Quantity':int(data[3]) 
+                            'Availability':data[3] 
                             }
                     cards.append(card)
                 else:

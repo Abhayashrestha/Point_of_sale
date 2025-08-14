@@ -1,6 +1,6 @@
-1, Pikachu   , Common    , 5
-2, Charizard , Rare      , 2
-3, Bulbasaur , Common    , 7
-4, Mewtwo    , Legendary , 1
-5, Squirtle  , Common    , 4
-6, Gyarados  , Rare      , 3
+1,Pikachu,Common,Available
+2,Charizard,Rare,Available
+3,Bulbasaur,Common,Available
+4,Mewtwo,Legendary,Available
+5,Squirtle,Common,Available
+6,Gyarados,Rare,Available
