@@ -8,7 +8,7 @@ def load_inventory(file_path):
                 #cleaning data
                 data= line.strip().split(",")
                 if len(data)==4:
-                    card={'Id':int(data[0]),
+                    card={'Id':(data[0]),
                           'Name':data[1], 
                             'Rarity':data[2],
                             'Availability':data[3] 

@@ -31,7 +31,7 @@ def main():
                 print("----------------------------------------------------------")
                 operations.display_inventory()
                 name=input("Please enter your name: ")
-                buy_id=int(input("Please enter the ID of the card you would like to purchase: "))
+                buy_id=input("Please enter the ID of the card you would like to purchase: ")
                 operations.buy_card(name,buy_id)
     except:
         pass
