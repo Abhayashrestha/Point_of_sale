@@ -15,16 +15,20 @@ def display_inventory():
                 ("No cards available")
 
 def buy_card(buy_id, buy_quantity):
+    try: 
         cards=read.load_inventory('pos/pokemon_cards.txt')
         for card in cards:
             if card['Id']==buy_id and card['Availability']=='Available':
                 card ['Availability']=='Not Available'
                 write.write_cards('pos/pokemon_cards.txt',cards)
-                print ("purchase sucessfull")
-                generate_rent_invoice(name, duration)#calling generate_rent_invoice function to generate a bill text file
-                prnt_bills_rent(name, duration)#calling prnt_bills_rent to print bill on screen for user after renting a land 
+                print ("purchase sucessfull") 
                 break
-            
+            else:
+                print(f"Card with ID {Id} is not available for rent.")
+    except FileNotFoundError: #helps to handle the file not found error smoothly
+            print("Error: File not found. Please check the file path.")
+    except Exception as e: #helps to catch and fix general exceptions by displaying and error message
+            print(f"Error renting land: {e}")
 
 def purchase():
     try:
