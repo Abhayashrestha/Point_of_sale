@@ -5,7 +5,7 @@ import operations
 cards=[]
 
 def main():
-    file_path='pos/pokemon_cards.txt'
+    file_path = 'pokemon_cards.txt'
     read.load_inventory(file_path)
     print("----------------------------------------------------------")
     print("-------------Abhaya's Pokemon Card corner-----------------")
@@ -30,9 +30,9 @@ def main():
                 print("-------------Abhaya's Pokemon Card corner-----------------")
                 print("----------------------------------------------------------")
                 operations.display_inventory()
-                name=input("Please enter your name: ")
-                buy_id=input("Please enter the ID of the card you would like to purchase: ")
-                operations.buy_card(name,buy_id)
+                name = input("Please enter your name: ")
+                buy_id = input("Please enter the ID of the card you would like to purchase: ")
+                operations.buy_card(buy_id)
     except:
         pass
 
