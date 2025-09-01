@@ -1,43 +1,44 @@
-#importing necessary files
 import read
 import operations
-#creating a simple list to store card info
-cards=[]
+
 
 def main():
-    file_path='pos/pokemon_cards.txt'
+    file_path = 'pokemon_cards.txt'
     read.load_inventory(file_path)
     print("----------------------------------------------------------")
     print("-------------Abhaya's Pokemon Card corner-----------------")
     print("----------------------------------------------------------")
 
-    options=["Press 1 to view inverntory", "Press 2 to buy card", "Press 3 to sell cards","Press 4 to exit"]
+    options = [
+        "Press 1 to view inventory",
+        "Press 2 to buy card",
+        "Press 3 to sell card",
+        "Press 4 to exit",
+    ]
     for option in options:
         print(option)
     choice = int(input("Please Enter your choice here : "))
-    try:   
+    try:
         if choice == 1:
             print("----------------------------------------------------------")
             print("-------------Abhaya's Pokemon Card corner-----------------")
             print("----------------------------------------------------------")
             operations.display_inventory()
-    except:
+        elif choice == 2:
+            print("----------------------------------------------------------")
+            print("-------------Abhaya's Pokemon Card corner-----------------")
+            print("----------------------------------------------------------")
+            operations.display_inventory()
+            buy_id = input("Please enter the ID of the card you would like to purchase: ")
+            operations.buy_card(buy_id)
+        elif choice == 3:
+            sell_id = input("Please enter the ID of the card you would like to sell: ")
+            operations.sell_card(sell_id)
+        elif choice == 4:
+            print("Thank you for visiting!")
+    except Exception:
         pass
-    try:  
-        if choice == 2:
-            while True:
-                print("----------------------------------------------------------")
-                print("-------------Abhaya's Pokemon Card corner-----------------")
-                print("----------------------------------------------------------")
-                operations.display_inventory()
-                name=input("Please enter your name: ")
-                buy_id=input("Please enter the ID of the card you would like to purchase: ")
-                operations.buy_card(name,buy_id)
-    except:
-        pass
 
 
-main()
-__name__="main"
-
-
+if __name__ == "__main__":
+    main()
