@@ -1,43 +1,50 @@
-#importing necessary files
-import read
+"""Entry point for the Pokémon card point of sale application."""
+
 import operations
-#creating a simple list to store card info
-cards=[]
 
-def main():
-    file_path='pos/pokemon_cards.txt'
-    read.load_inventory(file_path)
+
+def main() -> None:
+    """Run a small interactive command line interface.
+
+    Users can view the inventory, purchase cards or search for a card by name.
+    The loop continues until the user chooses to exit.
+    """
+
     print("----------------------------------------------------------")
-    print("-------------Abhaya's Pokemon Card corner-----------------")
+    print("-------------Abhaya's Pokemon Card Corner-----------------")
     print("----------------------------------------------------------")
 
-    options=["Press 1 to view inverntory", "Press 2 to buy card", "Press 3 to sell cards","Press 4 to exit"]
-    for option in options:
-        print(option)
-    choice = int(input("Please Enter your choice here : "))
-    try:   
-        if choice == 1:
-            print("----------------------------------------------------------")
-            print("-------------Abhaya's Pokemon Card corner-----------------")
-            print("----------------------------------------------------------")
+    while True:
+        options = [
+            "Press 1 to view inventory",
+            "Press 2 to buy card",
+            "Press 3 to search for a card",
+            "Press 4 to exit",
+        ]
+        for option in options:
+            print(option)
+
+        choice = input("Please enter your choice here: ")
+
+        if choice == "1":
             operations.display_inventory()
-    except:
-        pass
-    try:  
-        if choice == 2:
-            while True:
-                print("----------------------------------------------------------")
-                print("-------------Abhaya's Pokemon Card corner-----------------")
-                print("----------------------------------------------------------")
-                operations.display_inventory()
-                name=input("Please enter your name: ")
-                buy_id=input("Please enter the ID of the card you would like to purchase: ")
-                operations.buy_card(name,buy_id)
-    except:
-        pass
+        elif choice == "2":
+            buy_id = input(
+                "Please enter the ID of the card you would like to purchase: "
+            )
+            operations.buy_card(buy_id)
+        elif choice == "3":
+            name = input("Enter the name of the card you are looking for: ")
+            operations.search_card(name)
+        elif choice == "4":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice, please try again.")
 
 
-main()
-__name__="main"
+if __name__ == "__main__":
+    main()
+
 
 
