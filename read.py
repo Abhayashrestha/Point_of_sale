@@ -1,25 +1,12 @@
+import csv
 
 def load_inventory(file_path):
-    #creation of empty list land
-    cards=[]
+    """Load inventory data from a CSV file into a list of dicts."""
+    cards = []
     try:
-        with open(file_path, 'r') as file:
-            for line in file:
-                #cleaning data
-                data= line.strip().split(",")
-                if len(data)==4:
-                    card={'Id':(data[0]),
-                          'Name':data[1], 
-                            'Rarity':data[2],
-                            'Availability':data[3] 
-                            }
-                    cards.append(card)
-                else:
-                    print("issue") 
-                    
-        pass
+        with open(file_path, newline="") as file:
+            reader = csv.DictReader(file, fieldnames=['Id', 'Name', 'Rarity', 'Availability'])
+            cards = list(reader)
     except FileNotFoundError:
-        pass
-
+        print("Error: File not found. Please check the file path.")
     return cards
-
